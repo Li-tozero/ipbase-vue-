@@ -24,15 +24,21 @@
       <router-view></router-view>
     </section>
     <footer>版权所有</footer>
+    <login :showLogin="show" @hide="handleHide"></login>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import '../assets/styles/reset.css'
+import Login from '../common/login.vue'
 export default {
   name: 'Layout',
+  components: {
+    Login
+  },
   data () {
     return {
+      show: false,
       pages: [
         {
           title: '首页',
@@ -59,7 +65,10 @@ export default {
   },
   methods: {
     handleLogin () {
-//      alert('click');
+      this.show = true
+    },
+    handleHide () {
+      this.show = false
     }
   }
 }
@@ -138,7 +147,8 @@ export default {
   }
   /*section样式*/
   section{
-
+    /*待删除*/
+    height: 400px;
   }
   /*footer样式*/
   footer{
