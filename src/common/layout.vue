@@ -74,7 +74,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   html,body{
     width: 100%;
   }
@@ -148,7 +148,7 @@ export default {
   /*section样式*/
   section{
     /*待删除*/
-    height: 400px;
+    /*height: 400px;*/
   }
   /*footer样式*/
   footer{

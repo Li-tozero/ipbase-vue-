@@ -4,6 +4,7 @@ import IndexPage from '@/pages/index/index.vue'
 import NewsPage from '@/pages/news/news.vue'
 import SourcePage from '@/pages/source/source.vue'
 import AboutPage from '@/pages/about/about.vue'
+import newsDetailPage from '@/pages/news/newsDetail/newsDetail.vue'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/about',
       name: 'AboutPage',
       component: AboutPage
+    },
+    {
+      path: '/newsDetail',
+      name: 'newsDetailPage',
+      component: newsDetailPage
     }
   ]
 })
