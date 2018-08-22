@@ -17,6 +17,7 @@
           </li>
         </ul>
       </nav>
+      <button class="login" @click="handleLogin">登录</button>
     </header>
     <section>
       <!--这里是每个页面的展示-->
@@ -54,6 +55,11 @@ export default {
           active: false
         }
       ]
+    }
+  },
+  methods: {
+    handleLogin () {
+//      alert('click');
     }
   }
 }
@@ -105,8 +111,8 @@ export default {
     width: 100px;
     height: 26px;
     color:#599bcf;
-    text-align:center;
-    line-height:26px;
+    text-align: center;
+    line-height: 26px;
     border-radius: 5px;
   }
   header a:hover,header .active{
@@ -119,8 +125,16 @@ export default {
     margin-left: -75px;
   }
   header img{
-    width:150px;
-    height:150px;
+    width: 150px;
+    height: 150px;
+  }
+  header button{
+    cursor: pointer;
+    color: #599bcf;
+    background: #1a243d;
+    position: absolute;
+    top: 20px;
+    right:40px;
   }
   /*section样式*/
   section{
