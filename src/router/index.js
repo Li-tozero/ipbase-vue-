@@ -4,7 +4,7 @@ import IndexPage from '@/pages/index/index.vue'
 import NewsPage from '@/pages/news/news.vue'
 import SourcePage from '@/pages/source/source.vue'
 import AboutPage from '@/pages/about/about.vue'
-import newsDetailPage from '@/pages/news/newsDetail/newsDetail.vue'
+import NewsDetailPage from '@/pages/news/newsDetail/newsDetail.vue'
 
 Vue.use(Router)
 
@@ -38,8 +38,8 @@ export default new Router({
     },
     {
       path: '/newsDetail',
-      name: 'newsDetailPage',
-      component: newsDetailPage
+      name: 'NewsDetailPage',
+      component: NewsDetailPage
     }
   ]
 })

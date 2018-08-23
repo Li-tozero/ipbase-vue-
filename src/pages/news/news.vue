@@ -10,11 +10,7 @@
           <img src="../../assets/images/news.jpg" alt="newsLogo"/>
         </div>
         <div class="newsList">
-          <!--这里抽象为组件-->
-          <!--待改，通过v-for循环，使用axios来获取-->
-          <news-list></news-list>
-          <news-list></news-list>
-          <news-list></news-list>
+          <news-list :myNewsList="newsList"></news-list>
         </div>
       </div>
       <div class="contact">
@@ -26,10 +22,32 @@
 <script>
 import NewsList from '../news/components/newsList.vue'
 import contact from '../../common/contact.vue'
+import axios from 'axios'
 export default{
   components: {
     contact,
     NewsList
+  },
+  data () {
+    return {
+      newsList: []
+    }
+  },
+  methods: {
+    getNewsList () {
+      axios.get('/api/newsList.json')
+        .then(this.handleGetNewsListSucc)
+    },
+    handleGetNewsListSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        this.newsList = data.newsList
+      }
+    }
+  },
+  mounted () {
+    this.getNewsList()
   }
 }
 </script>

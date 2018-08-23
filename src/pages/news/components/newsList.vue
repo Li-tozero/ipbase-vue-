@@ -1,18 +1,16 @@
 <template>
   <div>
     <ul>
-      <li>
+      <li v-for="item of myNewsList" :key="item.id">
         <div class="mask"></div>
         <div class="con">
-          <h3>我是标题</h3>
-          <span class="date">2018-6-12</span>
-          <span class="count">阅读量：10</span>
+          <h3>{{item.title}}</h3>
+          <span class="date">{{item.date}}</span>
+          <span class="count">阅读量：{{item.amount}}</span>
           <p>
-            我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概
-            我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概
-            我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概，我是梗概
+            {{item.description}}
           </p>
-          <router-link to="newsDetail">详情</router-link>
+          <router-link to="newsDetail" tag="a">详情</router-link>
         </div>
       </li>
     </ul>
@@ -21,7 +19,12 @@
 
 <script type="text/ecmascript-6">
 export default {
-  name: 'NewsList'
+  name: 'NewsList',
+  props: {
+    myNewsList: {
+      type: Array
+    }
+  }
 }
 </script>
 

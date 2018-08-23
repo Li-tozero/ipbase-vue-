@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrap">
     <div class="contactUs">
       <h3>联系我们</h3>
       <p>邮箱：12345678@ipbase.com</p>
