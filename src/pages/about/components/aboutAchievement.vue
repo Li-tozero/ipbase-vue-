@@ -1,75 +1,13 @@
 <template>
   <div class="achievement">
     <div class="waterfall comWidth">
-      <div class="item">
-        <img src="../../../assets/images/about/pic1.jpg"/>
-        <h3>成果名称</h3>
-        <p>成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍</p>
-      </div>
-
-      <div class="item">
-        <h3>成果名称</h3>
-        <p>成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，
-          成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，
-          成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍</p>
-      </div>
-
-      <div class="item">
-        <img src="../../../assets/images/about/pic3.jpg"/>
-        <h3>成果名称</h3>
-        <p>成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍</p>
-      </div>
-
-      <div class="item">
-        <h3>成果名称</h3>
-        <p>成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，
-          成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍</p>
-      </div>
-
-      <div class="item">
-        <img src="../../../assets/images/about/pic2.jpg"/>
-        <h3>成果名称</h3>
-        <p>成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，
-          成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍</p>
-      </div>
-
-      <div class="item">
-        <img src="../../../assets/images/about/pic1.jpg"/>
-        <h3>成果名称</h3>
-        <p>成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，
-          成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，
-          成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍</p>
-      </div>
-
-      <div class="item">
-        <h3>成果名称</h3>
-        <p>成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍</p>
-      </div>
-
-      <div class="item">
-        <img src="../../../assets/images/about/pic3.jpg">
-        <h3>成果名称</h3>
-        <p>成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，
-          成果介绍，成果介绍，成果介绍，成果介绍，成果介绍</p>
-      </div>
-
-      <div class="item">
-        <h3>成果名称</h3>
-        <p>成果介绍，成果介绍，成果介绍，成果介绍</p>
-      </div>
-
-      <div class="item">
-        <img src="../../../assets/images/about/pic3.jpg">
-        <h3>成果名称</h3>
-        <p>成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，
-          成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍</p>
-      </div>
-
-      <div class="item">
+      <div class="item"
+           v-for="item of achievementList"
+           :key="item.id"
+      >
         <img src="../../../assets/images/about/pic1.jpg">
-        <h3>成果名称</h3>
-        <p>成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，成果介绍，
-          成果介绍，成果介绍，成果介绍，成果介绍</p>
+        <h3>{{item.title}}</h3>
+        <p>{{item.description}}</p>
       </div>
 
     </div>
@@ -78,7 +16,12 @@
 
 <script type="text/ecmascript-6">
 export default {
-  name: 'aboutAchievement'
+  name: 'aboutAchievement',
+  props: {
+    achievementList: {
+      type: Array
+    }
+  }
 }
 </script>
 
