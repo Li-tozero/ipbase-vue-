@@ -8,7 +8,7 @@
     <div class="comWidth">
       <div class="sourceContent">
         <source-search></source-search>
-        <source-tab></source-tab>
+        <source-tab :apartSources="sourceList"></source-tab>
       </div>
       <div class="contact">
         <contact></contact>
@@ -21,12 +21,33 @@
 import sourceSearch from '../source/components/sourceSearch.vue'
 import sourceTab from '../source/components/sourceTab.vue'
 import contact from '../../common/contact.vue'
+import axios from 'axios'
 export default {
   name: 'sourcePage',
   components: {
     sourceSearch,
     sourceTab,
     contact
+  },
+  data () {
+    return {
+      sourceList: []
+    }
+  },
+  methods: {
+    getSourceList () {
+      axios.get('/api/sourceList.json')
+        .then(this.getSourceListSucc)
+    },
+    getSourceListSucc (res) {
+      res = res.data
+      if (res.ret) {
+        this.sourceList = res.sourceList
+      }
+    }
+  },
+  mounted () {
+    this.getSourceList()
   }
 }
 </script>
